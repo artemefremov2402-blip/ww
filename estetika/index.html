@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эстетика — Студия красоты Нелли</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf8f5;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        /* ===== ШАПКА ===== */
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #2d2d2d;
+        }
+
+        .btn {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d4a5a5;
+            transform: translateY(-2px);
+        }
+
+        /* ===== ГЛАВНЫЙ ЭКРАН ===== */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 80px;
+            background: linear-gradient(135deg, #faf8f5 0%, #f5e6e0 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2d2d2d;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            color: #6b6b6b;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        .section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* ===== УСЛУГИ ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: #6b6b6b;
+            margin-bottom: 20px;
+        }
+
+        /* ===== ФИШКА: КЛУБНИКА ===== */
+        .special {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .special .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .special h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2d2d2d;
+        }
+
+        .special p {
+            font-size: 16px;
+            color: #6b6b6b;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== ПОЧЕМУ МЫ ===== */
+        .why-us {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .why-us .section-title {
+            color: #ffffff;
+        }
+
+        .advantages {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .advantage {
+            max-width: 250px;
+        }
+
+        .advantage .icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .advantage h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .advantage p {
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+
+        /* ===== КОНТАКТЫ ===== */
+        .contacts {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .contacts p {
+            font-size: 16px;
+            color: #6b6b6b;
+            margin-bottom: 10px;
+        }
+
+        .btn-telegram {
+            background-color: #2AABEE;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-telegram:hover {
+            background-color: #1a95d6;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        footer {
+            background-color: #2d2d2d;
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .advantages {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header>
+        <div class="logo">Эстетика</div>
+        <a href="#contacts" class="btn">Записаться</a>
+    </header>
+
+    <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
+    <section class="hero">
+        <h1>Ваша красота —<br>наше вдохновение</h1>
+        <p>Уютная студия красоты с парикмахерскими услугами, маникюром и уходом за бровями. Каждого гостя ждёт сладкий комплимент 🍓</p>
+        <a href="#contacts" class="btn">Записаться онлайн</a>
+    </section>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <section class="section">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="icon">💇‍♀️</div>
+                <h3>Парикмахерские услуги</h3>
+                <p>Стрижки, окрашивание, укладка. Создадим образ, который подчеркнёт вашу индивидуальность</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">💅</div>
+                <h3>Ногтевой сервис</h3>
+                <p>Маникюр, педикюр, покрытие гель-лаком. Аккуратные и стойкие ногти на каждый день</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">✨</div>
+                <h3>Уход за бровями</h3>
+                <p>Архитектура, окрашивание, ламинирование. Идеальная форма под ваш тип лица</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== ФИШКА: КЛУБНИКА В ШОКОЛАДЕ ===== -->
+    <section class="special">
+        <div class="icon">🍓</div>
+        <h2>Сладкий комплимент каждому гостю</h2>
+        <p>При каждом посещении студии вас ждёт клубника в шоколаде — наш фирменный знак заботы и внимания</p>
+    </section>
+
+    <!-- ===== ПОЧЕМУ МЫ ===== -->
+    <section class="why-us">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="advantages">
+            <div class="advantage">
+                <div class="icon">💖</div>
+                <h3>Персональный подход</h3>
+                <p>Мастер Нелли уделяет внимание каждому клиенту и создаёт атмосферу уюта</p>
+            </div>
+            <div class="advantage">
+                <div class="icon">🎁</div>
+                <h3>Акции и подарки</h3>
+                <p>Регулярные розыгрыши, бесплатные процедуры и приятные сюрпризы</p>
+            </div>
+            <div class="advantage">
+                <div class="icon">📍</div>
+                <h3>Рядом с домом</h3>
+                <p>Уютная студия в шаговой доступности — удобно записаться в любое время</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="contacts" id="contacts">
+        <h2 class="section-title">Запишитесь прямо сейчас</h2>
+        <p>📍 г. Всеволожск, ул. Доктора Сотникова, д. 29</p>
+        <p>📞 +7 (XXX) XXX-XX-XX</p>
+        <p>🕐 Ежедневно с 10:00 до 21:00</p>
+        <!-- ЗАМЕНИ ССЫЛКУ НА РЕАЛЬНУЮ -->
+        <a href="https://t.me/studiaestetika19" class="btn btn-telegram">Написать в Telegram</a>
+    </section>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer>
+        <p>© 2026 Студия красоты «Эстетика». Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
